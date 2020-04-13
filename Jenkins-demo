@@ -4,10 +4,11 @@ pipeline{
         PATH = "/opt/maven3/bin:$PATH"
     }
     stages{
-        stage("Echo message"){
+        stage("Git Checkout"){
             steps{
-                //git credentialsId: 'github', url: 'https://github.com/arusub/demo'
-                echo "Test gradle jenkins"
+                echo $PATH
+                git credentialsId: 'github', url: 'https://github.com/arusub/demo'
+                //echo "Test gradle jenkins"
             }
         }
         stage("Maven Build"){
