@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                git credentialsId: 'github', url: 'https://github.com/arusub/demo'
+                git credentialsId: 'github', url: 'https://github.com/arusub/docker-jenkins-integration'
             }
         }
         stage("Maven Build"){
