@@ -6,9 +6,8 @@ pipeline{
     stages{
         stage("Git Checkout"){
             steps{
-                echo $PATH
+                cleanWs()
                 git credentialsId: 'github', url: 'https://github.com/arusub/demo'
-                //echo "Test gradle jenkins"
             }
         }
         stage("Maven Build"){
