@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    environment{
+        PATH = "/opt/maven3/bin:$PATH"
+    }
+    stages{
+        stage("Echo message"){
+            steps{
+                //git credentialsId: 'github', url: 'https://github.com/arusub/demo'
+                echo "Test gradle jenkins"
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+    }
+}
